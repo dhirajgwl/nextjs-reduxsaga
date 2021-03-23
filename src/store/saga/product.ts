@@ -3,7 +3,7 @@ import { ACTIONS, failure, productDataSuccess } from 'store/actions/product';
 
 function* loadProduct() {
   try {
-    const res = yield fetch('https://fakestoreapi.com/products');
+    const res = yield fetch('https://fakestoreapi.herokuapp.com/products');
     const data = yield res.json();
     yield put(productDataSuccess(data));
   } catch (err) {

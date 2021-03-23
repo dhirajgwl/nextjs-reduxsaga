@@ -19,7 +19,6 @@ const ProductView = () => {
   });
 
   const currencyRates = useSelector((state: RootState) => {
-    console.log(state);
     const {
       currencyReducer: { currency },
     } = state;
@@ -51,6 +50,8 @@ const ProductView = () => {
     category: '',
   };
 
+  const imgUrl = String(image).replace('fakestoreapi.com','fakestoreapi.herokuapp.com')
+
   return selctedProduct ? (
     <>
       <Head>
@@ -64,7 +65,7 @@ const ProductView = () => {
           <h1>{title}</h1>
           <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2">
             <div className="col">
-              <img src={image} alt={title}></img>
+              <img src={imgUrl} alt={title}></img>
             </div>
             <div className="col">
               <p>{description}</p>
